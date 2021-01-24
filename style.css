@@ -308,7 +308,7 @@ footer{
     }
 
     .sect-about{
-        height: 60vh;
+        height: 80vh;
         text-align: center;
     }
     .about-items{
@@ -348,7 +348,7 @@ footer{
 
 @media screen and (max-width: 700px){
     .sect-about{
-        height: 80vh;
+        height: 100vh;
         text-align: center;
     }
     .about-items{
