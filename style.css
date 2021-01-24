@@ -363,6 +363,9 @@ footer{
     .product-detail > div{
         width: 100%;
     }
+    .prod-2:nth-child(even) .prod-det-text{
+        order: 1;
+    }
 
     
     .portfolio{
