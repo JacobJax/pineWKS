@@ -354,6 +354,9 @@ footer{
         flex-direction: column;
         margin-top: 10px;
     }
+    .about-details p{
+        font-size: 1em;
+    }
     .product-detail{
         flex-direction: column;
     }
