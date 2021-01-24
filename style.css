@@ -44,6 +44,9 @@ li:hover{
     text-decoration: none;
     color: #000;
 }
+.nav-toggle{
+    display: none;
+}
 
 /* header */
 header{
@@ -112,6 +115,7 @@ header{
 }
 .product-detail div{
     width: 50%;
+    background: #fbaf04;
 }
 .product-detail{
     display: flex;
@@ -123,14 +127,15 @@ header{
     font-family: 'Montserrat', sans-serif;
 }
 .prod-det-text h3{
-    color: #fbaf04;
+    /* color: #fbaf04; */
+    color: #212121;
     margin-bottom: 5px;
 }
 
 
 /* portfolio */
 .sect-portfolio{
-    height: 100vh;
+    height: 80vh;
     text-align: center;
     background: #fbaf04;
 }
@@ -139,16 +144,17 @@ header{
     height: 100%;
 }
 .portfolio{
-    margin: 20px 0;
+    /* margin: 10px 0; */
+    background: #212121;
     display: grid;
     gap: 5px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-auto-rows: minmax(100px, auto);
     grid-template-areas: 
-        "first first first second"
-        "first first first second"
-        "third third fourth fourth"
-        "third third fourth fourth"
+        "first first first second second"
+        "first first first second second"
+        "third third fourth fourth fourth"
+        "third third fourth fourth fourth"
     ;
 }
 .p-first{
@@ -156,24 +162,103 @@ header{
     background-position: center;
     background-size: cover;
     grid-area: first;
+    position: relative;
 }
+.p-first::after{
+    content: "Swara";
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-size: 1.6em;
+    font-family: 'Raleway', sans-serif;
+    background: #212121b4;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+.p-first:hover::after{
+    display: grid;
+}
+
 .p-second{
     background: url(img/Shoe_2.jpg);
     background-position: center;
     background-size: cover;
     grid-area: second;
+    position: relative;
 }
+.p-second::after{
+    content: "Nyati";
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-size: 1.6em;
+    font-family: 'Raleway', sans-serif;
+    background: #212121b4;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+.p-second:hover::after{
+    display: grid;
+}
+
 .p-third{
     background: url(img/Shoe_3.jpg);
     background-position: center;
     background-size: cover;
     grid-area: third;
+    position: relative;
 }
+.p-third::after{
+    content: "Tembo";
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-size: 1.6em;
+    font-family: 'Raleway', sans-serif;
+    background: #212121b4;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+.p-third:hover::after{
+    display: grid;
+}
+
 .p-fourth{
-    background: url(img/buhle.jpg);
+    background: url(img/Shoe_6.jpg);
     background-position: center;
     background-size: cover;
     grid-area: fourth;
+    position: relative;
+}
+.p-fourth::after{
+    content: "Simba";
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-size: 1.6em;
+    font-family: 'Raleway', sans-serif;
+    background: #212121b4;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+.p-fourth:hover::after{
+    display: grid;
 }
 
 /* footer */
@@ -194,4 +279,91 @@ footer{
     gap: 50px;
     justify-content: center;
     font-weight:bold;
+}
+
+
+/* media queries */
+@media screen and (max-width: 880px){
+    nav{
+        position: relative;
+    }
+    .nav-items{
+        display: none;
+        position: absolute;
+        top: 58px;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        background: #fbaf04;
+        width: 100%;
+    }
+    .nav-items ul{
+        flex-direction: column;
+    }
+    .nav-items ul li{
+        padding-left: 28px;
+    }
+    .nav-toggle{
+        display: block;
+    }
+
+    .sect-about{
+        height: 60vh;
+        text-align: center;
+    }
+    .about-items{
+        gap: 3px;
+        flex-direction: column;
+    }
+    .about-items .about-text{
+        font-size: 1.5rem;
+    }
+
+    .prod-det-text{
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+    .prod-det-text .text{
+        width: 100%;
+    }
+
+    .sect-portfolio{
+        height: 50vh;
+    }
+
+    .portfolio{
+        grid-auto-rows: minmax(50px, auto);
+    }
+
+    .shown{
+        display: block;
+        transform: translateY(2px);
+        transition-property: transform;
+        transition-duration: 200ms;
+        transition-timing-function: ease-in;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .sect-about{
+        height: 80vh;
+        text-align: center;
+    }
+    .about-items{
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .product-detail{
+        flex-direction: column;
+    }
+    .product-detail > div{
+        width: 100%;
+    }
+
+    
+    .portfolio{
+        width: 100%;
+    }
 }
